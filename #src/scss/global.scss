@@ -49,10 +49,12 @@ li {
   display: flex;
   flex-direction: column;
   height: 100%;
+  overflow: hidden;
 }
 
 .content {
   flex: 1 0 auto;
+  height: calc(100% - 80px);
 }
 
 .footer {
@@ -75,4 +77,22 @@ body {
 
 .none {
   display: none !important;
+}
+
+@media (max-width: 1340px) {
+
+  .main,
+  .header,
+  .footer {
+    padding: 0 90px 0 0;
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .main,
+  .header,
+  .footer {
+    padding: 0;
+  }
 }
