@@ -3,33 +3,76 @@ document.addEventListener("DOMContentLoaded", function () {
   let menu = document.querySelector('.js-menu');
   let burger = document.querySelector('.js-burger');
   let menuItem = document.querySelectorAll('.js-menu-item');
+  let menuOverlay = document.querySelector('.menu__overlay');
+  let menuPersonal = document.querySelector('.personal');
 
-  // Открытие меню
+  // Клик по бургеру
   burger.addEventListener('click', function () {
     if (!menu.classList.contains('active')) {
       menu.classList.add('active');
     } else {
       menu.classList.remove('active');
+      if (menuPersonal.classList.contains('active')) {
+        menuPersonal.classList.remove('active');
+      };
+
+      // Закрытие пункта меню, начало
+      let activeMenuBtn = document.querySelector('.js-menu-item.active');
+      let activeContent = document.querySelector('.js-menu-content.active');
+      if (activeMenuBtn) {
+        activeMenuBtn.classList.remove('active');
+      };
+      if (activeContent) {
+        activeContent.classList.remove('active');
+      };
+      // Закрытие пункта меню, конец
     };
   });
 
+  // Клик по пунктам меню
   menuItem.forEach(item => {
     item.addEventListener('click', function () {
       if (!menu.classList.contains('active')) {
         menu.classList.add('active');
       };
+      if (!menuPersonal.classList.contains('active')) {
+        menuPersonal.classList.add('active');
+      };
+
+      // Открытие пунктов в меню, начало
+      let id = this.getAttribute('data-menu');
+      let content = document.querySelector('.js-menu-content[data-menu="' + id + '"]');
+      let activeMenuBtn = document.querySelector('.js-menu-item.active');
+      let activeContent = document.querySelector('.js-menu-content.active');
+
+      if (activeMenuBtn) {
+        activeMenuBtn.classList.remove('active');
+      };
+      this.classList.add('active');
+      if (activeContent) {
+        activeContent.classList.remove('active');
+      };
+      content.classList.add('active');
+      // Открытие пунктов в меню, конец
     });
   });
 
-  // Клик вне элементов
-  document.addEventListener('click', (e) => {
-    let menuAllItems = e.composedPath().includes(menu);
+  // Клик вне меню
+  menuOverlay.addEventListener('click', (e) => {
+    menu.classList.remove('active');
+    menuPersonal.classList.remove('active');
 
-    if (!menuAllItems) {
-      if (menu.classList.contains('active')) {
-        menu.classList.remove('active');
-      };
+    // Закрытие пункта меню, начало
+    let activeMenuBtn = document.querySelector('.js-menu-item.active');
+    let activeContent = document.querySelector('.js-menu-content.active');
+
+    if (activeMenuBtn) {
+      activeMenuBtn.classList.remove('active');
     };
+    if (activeContent) {
+      activeContent.classList.remove('active');
+    };
+    // Закрытие пункта меню, конец
   });
 
   // Ячейка Сейчас в игре, перенос на мобильных

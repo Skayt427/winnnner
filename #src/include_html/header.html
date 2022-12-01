@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <link rel="stylesheet" href="css/aos.css">
   <link rel="stylesheet" href="css/style.min.css">
 
   <title>title</title>
@@ -48,74 +49,196 @@
             </div>
 
             <div class="menu js-menu">
-              <div class="menu__left">
+              <div class="menu__overlay"></div>
+              <div class="menu__wrapper">
                 <div class="menu__top">
                   <div class="burger js-burger">
                     <span class="burger__line"></span>
                   </div>
                 </div>
                 <ul class="menu__list">
-                  <li class="menu__item js-menu-item">
+                  <li class="menu__item js-menu-item" data-menu="1">
                     <span class="menu__icon icon-winner-winnings"></span>
                     <span class="menu__text">
                       Мои выигрыши
                     </span>
                   </li>
-                  <li class="menu__item js-menu-item">
+                  <li class="menu__item js-menu-item" data-menu="2">
                     <span class="menu__icon icon-placement"></span>
                     <span class="menu__text">
                       Мои результы
                     </span>
                   </li>
-                  <li class="menu__item js-menu-item">
+                  <li class="menu__item js-menu-item" data-menu="3">
                     <span class="menu__icon icon-winner-subscriptions"></span>
                     <span class="menu__text">
                       Мои подписки
                     </span>
                   </li>
-                  <li class="menu__item js-menu-item">
+                  <li class="menu__item js-menu-item" data-menu="4">
                     <span class="menu__icon icon-coin-circle"></span>
                     <span class="menu__text">
                       Мои жетоны
                     </span>
                   </li>
-                  <li class="menu__item js-menu-item">
+                  <li class="menu__item js-menu-item" data-menu="5">
                     <span class="menu__icon icon-chess"></span>
                     <span class="menu__text">
                       Вывод средств
                     </span>
                   </li>
-                  <li class="menu__item js-menu-item">
+                  <li class="menu__item js-menu-item" data-menu="6">
                     <span class="menu__icon icon-mail"></span>
                     <span class="menu__text">
                       Уведомления
                     </span>
                   </li>
-                  <li class="menu__item js-menu-item">
+                  <li class="menu__item js-menu-item" data-menu="7">
                     <span class="menu__icon icon-gift"></span>
                     <span class="menu__text">
                       Подарки
                     </span>
                   </li>
-                  <li class="menu__item js-menu-item">
+                  <li class="menu__item js-menu-item" data-menu="8">
                     <span class="menu__icon icon-user"></span>
                     <span class="menu__text">
                       Профиль
                     </span>
                   </li>
-                  <li class="menu__item js-menu-item">
+                  <li class="menu__item js-menu-item" data-menu="9">
                     <span class="menu__icon icon-referral"></span>
                     <span class="menu__text">
                       Реферальная система
                     </span>
                   </li>
-                  <li class="menu__item js-menu-item">
+                  <li class="menu__item js-menu-item" data-menu="10">
                     <span class="menu__icon icon-logout"></span>
                     <span class="menu__text">
                       Выход
                     </span>
                   </li>
                 </ul>
+              </div>
+
+              <div class="personal">
+
+                <div class="personal__content js-menu-content" data-menu="1">
+                  <h3 class="personal__title">Мои выигрыши</h3>
+
+                  <div class="stat stat_winnings">
+                    <div class="stat__wrapper">
+                      <div class="stat__item stat_head">
+                        <div class="stat__cell">Игра</div>
+                        <div class="stat__cell">Дата</div>
+                        <div class="stat__cell">Результат</div>
+                        <div class="stat__cell">Место в рейтинге</div>
+                        <div class="stat__cell">Выигрыш</div>
+                      </div>
+                      <ul class="stat__list">
+                        <li class="stat__item">
+                          <div class="stat__cell">Примеры</div>
+                          <div class="stat__cell">24.01.2020 15:40</div>
+                          <div class="stat__cell">00:09.643</div>
+                          <div class="stat__cell">>100</div>
+                          <div class="stat__cell">0</div>
+                        </li>
+                        <li class="stat__item">
+                          <div class="stat__cell">Примеры</div>
+                          <div class="stat__cell">24.01.2020 15:40</div>
+                          <div class="stat__cell">00:09.643</div>
+                          <div class="stat__cell">3</div>
+                          <div class="stat__cell">100</div>
+                        </li>
+                        <li class="stat__item">
+                          <div class="stat__cell">Примеры</div>
+                          <div class="stat__cell">24.01.2020 15:40</div>
+                          <div class="stat__cell">00:09.643</div>
+                          <div class="stat__cell">3</div>
+                          <div class="stat__cell">100</div>
+                        </li>
+                        <li class="stat__item">
+                          <div class="stat__cell">Примеры</div>
+                          <div class="stat__cell">24.01.2020 15:40</div>
+                          <div class="stat__cell">00:09.643</div>
+                          <div class="stat__cell">3</div>
+                          <div class="stat__cell">100</div>
+                        </li>
+                        <li class="stat__item">
+                          <div class="stat__cell">Примеры</div>
+                          <div class="stat__cell">24.01.2020 15:40</div>
+                          <div class="stat__cell">00:09.643</div>
+                          <div class="stat__cell">3</div>
+                          <div class="stat__cell">100</div>
+                        </li>
+                        <li class="stat__item">
+                          <div class="stat__cell">Примеры</div>
+                          <div class="stat__cell">24.01.2020 15:40</div>
+                          <div class="stat__cell">00:09.643</div>
+                          <div class="stat__cell">3</div>
+                          <div class="stat__cell">100</div>
+                        </li>
+                        <li class="stat__item">
+                          <div class="stat__cell">Примеры</div>
+                          <div class="stat__cell">24.01.2020 15:40</div>
+                          <div class="stat__cell">00:09.643</div>
+                          <div class="stat__cell">3</div>
+                          <div class="stat__cell">100</div>
+                        </li>
+                        <li class="stat__item">
+                          <div class="stat__cell">Примеры</div>
+                          <div class="stat__cell">24.01.2020 15:40</div>
+                          <div class="stat__cell">00:09.643</div>
+                          <div class="stat__cell">3</div>
+                          <div class="stat__cell">100</div>
+                        </li>
+                        <li class="stat__item">
+                          <div class="stat__cell">Примеры</div>
+                          <div class="stat__cell">24.01.2020 15:40</div>
+                          <div class="stat__cell">00:09.643</div>
+                          <div class="stat__cell">3</div>
+                          <div class="stat__cell">100</div>
+                        </li>
+                      </ul>
+                      <div class="stat__total">
+                        Итог:
+                        <span class="stat__total-value">100</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="personal__content js-menu-content" data-menu="2">
+                  <h3 class="personal__title">Мои результаты</h3>
+
+                  <div class="stat stat_winnings">
+                    <div class="stat__wrapper">
+                      <div class="stat__item stat_head">
+                        <div class="stat__cell">Игра</div>
+                        <div class="stat__cell">Дата</div>
+                        <div class="stat__cell">Результат</div>
+                        <div class="stat__cell">Место в рейтинге</div>
+                        <div class="stat__cell">Выигрыш</div>
+                      </div>
+                      <ul class="stat__list">
+                        <li class="stat__item">
+                          <div class="stat__cell">Примеры</div>
+                          <div class="stat__cell">24.01.2020 15:40</div>
+                          <div class="stat__cell">00:09.643</div>
+                          <div class="stat__cell">>100</div>
+                          <div class="stat__cell">0</div>
+                        </li>
+                        <li class="stat__item">
+                          <div class="stat__cell">Примеры</div>
+                          <div class="stat__cell">24.01.2020 15:40</div>
+                          <div class="stat__cell">00:09.643</div>
+                          <div class="stat__cell">3</div>
+                          <div class="stat__cell">100</div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
