@@ -1,7 +1,10 @@
+AOS.init();
+
 document.addEventListener("DOMContentLoaded", function () {
   // Меню
   let menu = document.querySelector('.js-menu');
   let burger = document.querySelector('.js-burger');
+  let burgerMobile = document.querySelector('.js-burger-mobile');
   let menuItem = document.querySelectorAll('.js-menu-item');
   let menuOverlay = document.querySelector('.menu__overlay');
   let menuPersonal = document.querySelector('.personal');
@@ -73,6 +76,13 @@ document.addEventListener("DOMContentLoaded", function () {
       activeContent.classList.remove('active');
     };
     // Закрытие пункта меню, конец
+  });
+
+  // Клик по бургеру мобильной
+  burgerMobile.addEventListener('click', function () {
+    if (!menu.classList.contains('active')) {
+      menu.classList.add('active');
+    };
   });
 
   // Ячейка Сейчас в игре, перенос на мобильных

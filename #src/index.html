@@ -8,7 +8,10 @@
       </div>
       <div class="box__right">
         <div class="box__title">Призовой фонд</div>
-        <div class="box__value">1 234 770</div>
+        <div class="box__value">
+          1 234
+          <span class="box__value-icon icon-coin-slashed"></span>
+        </div>
       </div>
     </div>
 
@@ -17,7 +20,7 @@
         <div class="box__icon icon-hourglass"></div>
       </div>
       <div class="box__right">
-        <div class="box__title">До окончания игры осталось</div>
+        <div class="box__title">До окончания турнира</div>
         <div class="box__value">
           <span>0</span>
           <span>1</span>
@@ -48,14 +51,14 @@
 
       <div class="box-wrapper">
         <div class="box box_half box_link">
-          <div class="box__title">Мои игры</div>
+          <div class="box__title">Мои жетоны</div>
           <div class="box__value">7</div>
           <div class="box__subtitle">Купить</div>
         </div>
 
         <div class="box box_half box_link">
-          <div class="box__title">Мой кошелек</div>
-          <div class="box__value">1 200<span class="box__value-icon icon-coin"></span></div>
+          <div class="box__title">Баланс</div>
+          <div class="box__value">1 200<span class="box__value-icon icon-coin-slashed"></span></div>
           <div class="box__subtitle">Вывести</div>
         </div>
       </div>
@@ -78,7 +81,7 @@
         <div class="box__right">
           <div class="box__title">Мой зароботок</div>
           <div class="box__icon_mobile icon-coin-circle"></div>
-          <div class="box__value">1 240<span class="box__value-icon icon-coin"></span></div>
+          <div class="box__value">1 240<span class="box__value-icon icon-coin-slashed"></span></div>
           <div class="box__subtitle">Вывести</div>
         </div>
       </div>
@@ -123,81 +126,83 @@
     </div>
 
     <div class="rating js-rating">
-      <div class="rating__item rating__head">
-        <div class="rating__cell icon-placement"></div>
-        <div class="rating__cell rating__cell_text">Рейтинг игроков</div>
-        <div class="rating__cell icon-hourglass"></div>
-        <div class="rating__cell icon-coin-circle"></div>
-      </div>
+      <div class="rating__wrapper">
+        <div class="rating__item rating__head">
+          <div class="rating__cell icon-placement"></div>
+          <div class="rating__cell rating__cell_text">Рейтинг игроков</div>
+          <div class="rating__cell icon-hourglass"></div>
+          <div class="rating__cell icon-coin-circle"></div>
+        </div>
 
-      <ul class="rating__list">
-        <li class="rating__item">
-          <div class="rating__cell"></div>
-          <div class="rating__cell">user_id: 432</div>
-          <div class="rating__cell">01:50:00</div>
-          <div class="rating__cell">22 300</div>
-        </li>
-        <li class="rating__item">
-          <div class="rating__cell"></div>
-          <div class="rating__cell">user_id: 432</div>
-          <div class="rating__cell">01:50:00</div>
-          <div class="rating__cell">22 300</div>
-        </li>
-        <li class="rating__item">
-          <div class="rating__cell"></div>
-          <div class="rating__cell">user_id: 432</div>
-          <div class="rating__cell">01:50:00</div>
-          <div class="rating__cell">22 300</div>
-        </li>
-        <li class="rating__item">
-          <div class="rating__cell"></div>
-          <div class="rating__cell">user_id: 432</div>
-          <div class="rating__cell">01:50:00</div>
-          <div class="rating__cell">22 300</div>
-        </li>
-        <li class="rating__item">
-          <div class="rating__cell"></div>
-          <div class="rating__cell">user_id: 432</div>
-          <div class="rating__cell">01:50:00</div>
-          <div class="rating__cell">22 300</div>
-        </li>
-        <li class="rating__item">
-          <div class="rating__cell"></div>
-          <div class="rating__cell">user_id: 432</div>
-          <div class="rating__cell">01:50:00</div>
-          <div class="rating__cell">22 300</div>
-        </li>
-        <li class="rating__item">
-          <div class="rating__cell"></div>
-          <div class="rating__cell">user_id: 432</div>
-          <div class="rating__cell">01:50:00</div>
-          <div class="rating__cell">22 300</div>
-        </li>
-        <li class="rating__item">
-          <div class="rating__cell"></div>
-          <div class="rating__cell">user_id: 432</div>
-          <div class="rating__cell">01:50:00</div>
-          <div class="rating__cell">22 300</div>
-        </li>
-        <li class="rating__item">
-          <div class="rating__cell"></div>
-          <div class="rating__cell">user_id: 432</div>
-          <div class="rating__cell">01:50:00</div>
-          <div class="rating__cell">22 300</div>
-        </li>
-        <li class="rating__item">
-          <div class="rating__cell"></div>
-          <div class="rating__cell">user_id: 432</div>
-          <div class="rating__cell">01:50:00</div>
-          <div class="rating__cell">22 300</div>
-        </li>
-        <li class="rating__item">
-          <div class="rating__cell"></div>
-          <div class="rating__cell">user_id: 432</div>
-          <div class="rating__cell">01:50:00</div>
-          <div class="rating__cell">22 300</div>
-        </li>
-      </ul>
+        <ul class="rating__list">
+          <li class="rating__item">
+            <div class="rating__cell"></div>
+            <div class="rating__cell">user_id: 432</div>
+            <div class="rating__cell">01:50:00</div>
+            <div class="rating__cell">22 300</div>
+          </li>
+          <li class="rating__item">
+            <div class="rating__cell"></div>
+            <div class="rating__cell">user_id: 432</div>
+            <div class="rating__cell">01:50:00</div>
+            <div class="rating__cell">22 300</div>
+          </li>
+          <li class="rating__item">
+            <div class="rating__cell"></div>
+            <div class="rating__cell">user_id: 432</div>
+            <div class="rating__cell">01:50:00</div>
+            <div class="rating__cell">22 300</div>
+          </li>
+          <li class="rating__item">
+            <div class="rating__cell"></div>
+            <div class="rating__cell">user_id: 432</div>
+            <div class="rating__cell">01:50:00</div>
+            <div class="rating__cell">22 300</div>
+          </li>
+          <li class="rating__item">
+            <div class="rating__cell"></div>
+            <div class="rating__cell">user_id: 432</div>
+            <div class="rating__cell">01:50:00</div>
+            <div class="rating__cell">22 300</div>
+          </li>
+          <li class="rating__item">
+            <div class="rating__cell"></div>
+            <div class="rating__cell">user_id: 432</div>
+            <div class="rating__cell">01:50:00</div>
+            <div class="rating__cell">22 300</div>
+          </li>
+          <li class="rating__item">
+            <div class="rating__cell"></div>
+            <div class="rating__cell">user_id: 432</div>
+            <div class="rating__cell">01:50:00</div>
+            <div class="rating__cell">22 300</div>
+          </li>
+          <li class="rating__item">
+            <div class="rating__cell"></div>
+            <div class="rating__cell">user_id: 432</div>
+            <div class="rating__cell">01:50:00</div>
+            <div class="rating__cell">22 300</div>
+          </li>
+          <li class="rating__item">
+            <div class="rating__cell"></div>
+            <div class="rating__cell">user_id: 432</div>
+            <div class="rating__cell">01:50:00</div>
+            <div class="rating__cell">22 300</div>
+          </li>
+          <li class="rating__item">
+            <div class="rating__cell"></div>
+            <div class="rating__cell">user_id: 432</div>
+            <div class="rating__cell">01:50:00</div>
+            <div class="rating__cell">22 300</div>
+          </li>
+          <li class="rating__item">
+            <div class="rating__cell"></div>
+            <div class="rating__cell">user_id: 432</div>
+            <div class="rating__cell">01:50:00</div>
+            <div class="rating__cell">22 300</div>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <button type="button" class="rating__btn js-rating-btn">Свернуть/Развернуть</button>

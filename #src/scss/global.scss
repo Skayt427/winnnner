@@ -52,7 +52,7 @@ li {
 
 .content {
   flex: 1 0 auto;
-  height: calc(100% - 80px);
+  height: calc(100% - 60px);
 }
 
 .footer {
@@ -68,7 +68,7 @@ body {
 }
 
 .container {
-  max-width: 1154px;
+  max-width: 1121px;
   padding: 0 15px;
   margin: 0 auto;
 }
@@ -82,7 +82,7 @@ body {
   .main,
   .header,
   .footer {
-    padding: 0 90px 0 0;
+    padding: 0 60px 0 0;
   }
 }
 
