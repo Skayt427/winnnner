@@ -1,6 +1,6 @@
-AOS.init();
-
 document.addEventListener("DOMContentLoaded", function () {
+  AOS.init();
+
   // Меню
   let menu = document.querySelector('.js-menu');
   let burger = document.querySelector('.js-burger');
@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let menuItem = document.querySelectorAll('.js-menu-item');
   let menuOverlay = document.querySelector('.menu__overlay');
   let menuPersonal = document.querySelector('.personal');
+  let personalBack = document.querySelectorAll('.js-back');
 
   // Клик по бургеру
   burger.addEventListener('click', function () {
@@ -17,6 +18,9 @@ document.addEventListener("DOMContentLoaded", function () {
       menu.classList.remove('active');
       if (menuPersonal.classList.contains('active')) {
         menuPersonal.classList.remove('active');
+      };
+      if (menu.classList.contains('active-for-mobile')) {
+        menu.classList.remove('active-for-mobile');
       };
 
       // Закрытие пункта меню, начало
@@ -41,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!menuPersonal.classList.contains('active')) {
         menuPersonal.classList.add('active');
       };
+      menu.classList.add('active-for-mobile');
 
       // Открытие пунктов в меню, начало
       let id = this.getAttribute('data-menu');
@@ -83,6 +88,19 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!menu.classList.contains('active')) {
       menu.classList.add('active');
     };
+  });
+
+  // Клик по кнопке назад в пугктах меню
+  personalBack.forEach(backBtn => {
+    backBtn.addEventListener('click', function () {
+      let activeMenuBtn = document.querySelector('.js-menu-item.active');
+      let activeContent = document.querySelector('.js-menu-content.active');
+
+      activeMenuBtn.classList.remove('active');
+      activeContent.classList.remove('active');
+      menu.classList.remove('active-for-mobile');
+      menuPersonal.classList.remove('active');
+    });
   });
 
   // Ячейка Сейчас в игре, перенос на мобильных
