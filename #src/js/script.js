@@ -125,4 +125,21 @@ document.addEventListener("DOMContentLoaded", function () {
   ratingTableBtn.addEventListener('click', function () {
     ratingTable.classList.toggle('active');
   });
+
+  // Табы
+  let tabsBtns = document.querySelectorAll('.js-tabs-btn');
+
+  tabsBtns.forEach(btn => {
+    btn.addEventListener('click', function () {
+      let id = this.getAttribute('data-tab');
+      let tabWrapper = this.closest('.js-tabs');
+      let content = tabWrapper.querySelector('.js-tabs-item[data-tab="' + id + '"]');
+
+      tabWrapper.querySelector('.js-tabs-btn.active').classList.remove('active');
+      this.classList.add('active');
+
+      tabWrapper.querySelector('.js-tabs-item.active').classList.remove('active');
+      content.classList.add('active');
+    });
+  });
 });

@@ -109,6 +109,7 @@ function js() {
     .pipe(dest(path.build.js)) // Путь вывода js
     .pipe(browsersync.stream()) // Перезагрузка
 }
+
 function jslibs() {
   return src(path.src.jslibs)
     .pipe(dest(path.build.js))
