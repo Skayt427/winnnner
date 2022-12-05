@@ -104,3 +104,7 @@ body {
     padding: 0;
   }
 }
+
+.js-modal:not(.active) {
+  display: none;
+}

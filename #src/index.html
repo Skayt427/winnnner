@@ -34,7 +34,38 @@
       </div>
     </div>
 
-    <div class="game-area js-game-area"></div>
+    <div class="game js-game-area">
+      <!-- Превью -->
+      <!-- <div class="game__item">
+        <div class="game__wrapper">
+          <div class="game__title">Сравнение</div>
+          <img src="img/sravnenie.jpg" alt="" class="game__img">
+        </div>
+
+        <div class="game__btns">
+          <button type="button" class="game__btn">Турнир</button>
+          <button type="button" class="game__btn">Тренировка</button>
+        </div>
+      </div> -->
+
+      <!-- Правила -->
+      <div class="game__item rules">
+        <div class="game__wrapper">
+          <div class="rules__title">Правила игры</div>
+
+          <div class="rules__box">
+            <div class="rules__subtitle">Сравнение</div>
+            <div class="rules__text">Прохождение игры благоприятно сказывается на концентрации внимания, которое способствует выделению нужной фигуры из фона и удержанию этого объекта, в свою очередь это показывает сосредоточение на разных занятиях, выполнение целей и доведение дел до конца.</div>
+            <div class="rules__picture" style="background-image: url('img/einshtein.svg');"></div>
+          </div>
+        </div>
+
+        <div class="game__btns">
+          <button type="button" class="game__btn">Ознакомлен</button>
+          <button type="button" class="game__btn">Отмена</button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="main__right">
@@ -201,11 +232,61 @@
             <div class="rating__cell">01:50:00</div>
             <div class="rating__cell">22 300</div>
           </li>
+
+          <!-- Если впереди есть rating__item то сообщение скроется -->
+          <li class="rating__empty">В игре 0 игроков.</li>
         </ul>
       </div>
     </div>
 
     <button type="button" class="rating__btn js-rating-btn">Свернуть/Развернуть</button>
+  </div>
+</div>
+
+<!-- Добавлять active -->
+<div class="modal js-modal">
+  <div class="modal__overlay js-modal-overlay"></div>
+
+  <div class="modal__wrapper">
+    <div class="modal__container">
+      <div class="modal__close icon-close js-modal-close"></div>
+
+      <div class="modal__title">Вход на сайт</div>
+
+      <div class="modal__tabs js-tabs">
+        <div class="modal__btns">
+          <div class="modal__btn js-tabs-btn active" data-tab="1">Telegram</div>
+          <div class="modal__btn js-tabs-btn" data-tab="2">WhatsApp</div>
+        </div>
+
+        <div class="modal__item authorization js-tabs-item active" data-tab="1">
+          Telegram
+        </div>
+
+        <div class="modal__item authorization js-tabs-item" data-tab="2">
+          <div class="whatsapp">
+            <div class="whatsapp__title">Укажите номер телефона для получения кода</div>
+
+            <label class="label label_phone">
+              <input type="tel" class="input" placeholder="+7 952 792-09-57">
+              <div class="label__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 6" width="20" height="17">
+                  <rect fill="#fff" width="9" height="3" />
+                  <rect fill="#d52b1e" y="3" width="9" height="3" />
+                  <rect fill="#0039a6" y="2" width="9" height="2" />
+                </svg>
+              </div>
+            </label>
+
+            <button type="button" class="btn">Получить код</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="politics">
+        Нажимая кнопку «Получить код», я подтверждаю свою дееспособность и даю согласие на обработку своих персональных данных на условиях <a href="#" class="politics__link">Пользовательского соглашения</a>.
+      </div>
+    </div>
   </div>
 </div>
 

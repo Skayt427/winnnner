@@ -142,4 +142,30 @@ document.addEventListener("DOMContentLoaded", function () {
       content.classList.add('active');
     });
   });
+
+  // Копирование реферальной ссылки
+  let referalLink = document.querySelector('.referal__link');
+  let referalBtn = document.querySelector('.referal__btn');
+
+  referalBtn.addEventListener('click', function () {
+    referalLink.select();
+    document.execCommand("copy");
+  });
+
+
+  // Модалки
+  let modal = document.querySelectorAll('.js-modal');
+
+  modal.forEach(modal => {
+    let modalClose = modal.querySelector('.js-modal-close');
+    let modalOverlay = modal.querySelector('.js-modal-overlay');
+
+    modalOverlay.addEventListener('click', function () {
+      this.closest('.js-modal').classList.remove('active');
+    });
+
+    modalClose.addEventListener('click', function () {
+      this.closest('.js-modal').classList.remove('active');
+    });
+  });
 });

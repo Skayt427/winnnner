@@ -870,6 +870,10 @@
     display: grid;
     grid-template-columns: 45px 137px 80px auto;
     border-bottom: 1px solid #DDE1E6;
+
+    &+.rating__empty {
+      display: none;
+    }
   }
 
   &__head {
@@ -912,6 +916,7 @@
   }
 
   &__list {
+    position: relative;
     height: calc(100% - 51px);
     overflow-y: auto;
     counter-reset: rating;
@@ -939,9 +944,17 @@
       background-color: #DDE1E6;
     }
   }
+
+  &__empty {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 11px;
+  }
 }
 
-.game-area {
+.game {
   height: calc(100% - 83px);
   width: 100%;
   background-color: $color-white;
@@ -979,7 +992,7 @@
   //   line-height: 16px
   // }
 
-  .game-area {
+  .game {
     height: calc(100% - 68px);
   }
 }
@@ -1012,7 +1025,7 @@
     width: 100%;
   }
 
-  .game-area {
+  .game {
     height: 750px;
   }
 
@@ -1136,7 +1149,7 @@
 }
 
 @media (max-width: 1000px) {
-  .game-area {
+  .game {
     height: 550px;
   }
 
@@ -1146,12 +1159,12 @@
 }
 
 @media (max-width: 800px) {
-  .game-area {
-    height: 350px;
+  .game {
+    height: 534px;
   }
 
   .main__right {
-    height: calc(100% - 450px);
+    height: calc(100% - 550px);
   }
 }
 
@@ -1170,8 +1183,12 @@
     height: calc(100% - 52px);
   }
 
-  .game-area {
+  .game {
     height: 332px;
+  }
+
+  .main__left {
+    height: unset;
   }
 
   .main__right {
@@ -1320,7 +1337,7 @@
 }
 
 @media (max-width: 414px) {
-  .game-area {
+  .game {
     height: 280px;
   }
 
@@ -1445,12 +1462,20 @@
   margin-left: -16px;
 
   &__btn {
-    margin-top: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 52px;
     width: 100%;
+    margin-top: 32px;
     background-color: $color-white;
     border: none;
     border-top: 1px solid #EAEAEA;
+  }
+
+  &__icon {
+    font-size: 14px;
+    margin-right: 16px;
   }
 }
 
@@ -1528,6 +1553,12 @@
   &_gifts {
     .stat__item {
       grid-template-columns: 110px 95px auto;
+    }
+  }
+
+  &_referal {
+    .stat__item {
+      grid-template-columns: 100px 120px 120px auto;
     }
   }
 
@@ -1622,6 +1653,12 @@
   .stat_withdrawal {
     .stat__item {
       grid-template-columns: 74px 128px 87px auto;
+    }
+  }
+
+  .stat_referal {
+    .stat__item {
+      grid-template-columns: 80px 100px 100px auto;
     }
   }
 }
@@ -2001,7 +2038,7 @@
   }
 
   .input {
-    height: 4px;
+    height: 40px;
   }
 }
 
@@ -2111,5 +2148,500 @@
   &:hover {
     color: $color-blue;
     background-color: $color-white;
+  }
+}
+
+.referal {
+
+  &__title {}
+
+  &__link {
+    display: inline-block;
+    width: fit-content;
+
+    margin-top: 16px;
+    padding: 16px;
+    border-radius: 6px;
+    color: $color-white;
+    background-color: $color-blue;
+    border: none !important;
+  }
+
+  &__btn {
+    display: block;
+    width: fit-content;
+    margin: 16px 0;
+  }
+}
+
+.info {
+
+  &__item {
+    list-style-type: disc;
+    margin: 36px 0 0 50px;
+
+    &:first-child {
+      margin-top: 20px;
+    }
+  }
+
+  &__link {
+    font-size: 14px;
+    line-height: 17px;
+    color: $color-main;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .info__link {
+    margin-top: 0;
+  }
+}
+
+.modal {
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  &__overlay {
+    position: fixed;
+    // z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+  }
+
+  &__wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    max-width: 874px;
+    width: calc(100% - 32px);
+    background-color: $color-white;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    transform: translate(-50%, -50%);
+  }
+
+  &__container {
+    position: relative;
+    z-index: 2;
+    padding: 32px;
+  }
+
+  &__close {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 40px;
+    color: $color-blue;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: $color-blue;
+    text-align: center;
+  }
+
+  &__tabs {}
+
+  &__btns {
+    display: flex;
+    gap: 32px;
+    margin-top: 24px;
+  }
+
+  &__btn {
+    width: calc((100% - 32px) / 2);
+    text-align: center;
+    padding: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #8A8A8A;
+    opacity: 0.8;
+    border-bottom: 2px solid #A1A1A1;
+    transition: all linear 0.2s;
+
+    &:hover,
+    &.active {
+      color: #000;
+      border-bottom: 2px solid $color-blue;
+      opacity: 1;
+    }
+
+    &:not(.active) {
+      cursor: pointer;
+    }
+  }
+
+  &__item {
+    margin-top: 32px;
+
+    &:not(.active) {
+      display: none;
+    }
+  }
+}
+
+.politics {
+  max-width: 742px;
+  width: 100%;
+  margin: 32px auto 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+
+  &__link {
+    color: $color-blue;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.whatsapp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    font-size: 12px;
+    line-height: 12px;
+  }
+
+  .label_phone {
+    margin-top: 24px;
+  }
+
+  .label__icon {
+    bottom: 50%;
+    transform: translateY(50%);
+  }
+
+  .label_phone .input {
+    margin-top: 0;
+  }
+
+  .btn {
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .modal__container {}
+
+  .modal__close {
+    display: block;
+  }
+
+  .modal__btns {
+    margin-top: 16px;
+    gap: 16px;
+  }
+
+  .modal__item {
+    margin-top: 24px;
+  }
+
+  .whatsapp .label_phone {
+    margin-top: 16px;
+  }
+
+  .politics {
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .modal__container {
+    padding: 16px;
+  }
+
+  .politics {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+
+.game {
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__wrapper {
+    width: 100%;
+    height: calc(100% - 125px);
+    overflow-y: auto;
+  }
+
+  &__title {
+    margin: 64px auto 0;
+    text-align: center;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+    color: $color-blue;
+  }
+
+  &__img {
+    max-height: calc(100% - 114px);
+    width: 100%;
+    margin: 0 auto;
+    padding: 32px 0;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  &__btns {
+    display: flex;
+    max-width: 650px;
+    gap: 8px;
+    width: 100%;
+    margin: auto auto 64px;
+    padding: 0 15px;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: calc((100% - 8px) / 2);
+    padding: 16px;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 27px;
+    color: $color-white;
+    background-color: $color-blue;
+    border: 1px solid $color-blue;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all linear 0.2s;
+
+    &:hover {
+      color: $color-blue;
+      background-color: $color-white;
+    }
+  }
+}
+
+@media (max-width: 1366px) {
+  .game__wrapper {
+    height: calc(100% - 93px);
+  }
+
+  .game__title {
+    margin-top: 32px;
+  }
+
+  .game__img {
+    max-height: calc(100% - 80px);
+    padding: 32px 0;
+  }
+
+  .game__btns {
+    margin-bottom: 32px;
+  }
+}
+
+@media (max-width: 680px) {
+  .game__wrapper {
+    height: calc(100% - 59px);
+  }
+
+  .game__title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .game__img {
+    max-height: calc(100% - 60px);
+    padding: 16px 0;
+  }
+
+  .game__btns {
+    margin-bottom: 16px;
+  }
+
+  .game__btn {
+    padding: 12px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .fullscreen {
+    .game {
+      position: fixed;
+      z-index: 300;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.rules {
+  .game__wrapper {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 0 15px;
+  }
+
+  &__title {
+    max-width: 650px;
+    width: 100%;
+    margin: 80px auto 0;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 39px;
+  }
+
+  &__box {
+    position: relative;
+    max-width: 650px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 43px 34px 54px 57px;
+    background-color: $color-white;
+    box-shadow: 0 4px 10px 3px rgba(84, 84, 84, 0.2);
+    border-radius: 4px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 80px;
+      top: 100%;
+      width: 104px;
+      height: 36px;
+      background-image: url('../img/rules-part.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: bottom right;
+    }
+  }
+
+  &__subtitle {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 600;
+  }
+
+  &__text {
+    position: relative;
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 17px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: -26px;
+      width: 10px;
+      height: 40px;
+      background-image: url('../img/!.svg');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__picture {
+    position: absolute;
+    width: 96px;
+    height: 96px;
+    left: 7px;
+    bottom: -69px;
+  }
+}
+
+@media (max-width: 1366px) {
+  .rules .game__wrapper {
+    display: block;
+  }
+
+  .rules__title {
+    margin-top: 32px;
+  }
+
+  .rules__box {
+    margin-top: 32px;
+    padding: 32px 32px 32px 49px;
+  }
+}
+
+@media (max-width: 1366px) and (min-width: 1025px) {
+  .rules__title {
+    margin-top: 16px;
+  }
+
+  .rules__box {
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .rules__title,
+  .rules__box,
+  .game__btns {
+    max-width: unset;
+  }
+
+  .rules__subtitle {
+    font-size: 28px;
+    line-height: 30px;
+  }
+}
+
+@media (max-width: 680px) {
+  .rules__title {
+    margin-top: 16px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .rules__box {
+    margin-top: 16px;
+  }
+
+  .rules__subtitle {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .rules__text {
+    margin-top: 8px;
+  }
+
+  .rules__box::before,
+  .rules__picture {
+    display: none;
   }
 }
