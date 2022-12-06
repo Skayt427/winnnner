@@ -168,4 +168,36 @@ document.addEventListener("DOMContentLoaded", function () {
       this.closest('.js-modal').classList.remove('active');
     });
   });
+
+
+  // Отсчет перед началом игры (цифра в синем круге)
+  let countdown = document.querySelector('.js-countdown-item');
+  if (countdown) {
+    // начало отсчета берет из html
+    let countdownStartValue = countdown.textContent;
+    // добавление длительности анимации
+    countdown.style.animationIterationCount = countdownStartValue * 2;
+    let countdownValue = countdownStartValue;
+
+    function countdownChange() {
+      if (countdownValue == 0) {
+        // конец отсчета
+        countdown.closest('.countdown').style.display = 'none';
+      } else {
+        countdownValue--;
+      }
+      countdown.innerHTML = countdownValue;
+    };
+
+    function countdownStart() {
+      countdown.classList.add('countdown-css');
+      // цикл вызова функции изменения
+      let countdownInterval = setInterval(() => countdownChange(), 1000);
+      // остановливает интервал
+      setTimeout(() => { clearInterval(countdownInterval); countdownChange(); }, countdownStartValue + '000');
+    }
+    countdownStart();
+  }
+
+  // Отсчет перед началом игры, конец
 });

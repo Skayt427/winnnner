@@ -32,8 +32,8 @@
 
 @font-face {
   font-family: 'icomoon';
-  src: url("../fonts/icomoon.eot?uyw3t3");
-  src: url("../fonts/icomoon.eot?uyw3t3#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?uyw3t3") format("truetype"), url("../fonts/icomoon.woff?uyw3t3") format("woff"), url("../fonts/icomoon.svg?uyw3t3#icomoon") format("svg");
+  src: url("../fonts/icomoon.eot?hq6pcj");
+  src: url("../fonts/icomoon.eot?hq6pcj#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?hq6pcj") format("truetype"), url("../fonts/icomoon.woff?hq6pcj") format("woff"), url("../fonts/icomoon.svg?hq6pcj#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -54,13 +54,24 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-comparing-down:before {
+  content: "\e915";
+}
+
+.icon-comparing-left:before {
+  content: "\e916";
+}
+
+.icon-comparing-right:before {
+  content: "\e917";
+}
+
 .icon-close:before {
   content: "\e914";
 }
 
 .icon-arrow-left:before {
   content: "\e913";
-  color: #737d87;
 }
 
 .icon-info:before {
@@ -1885,7 +1896,19 @@ body {
   overflow-y: auto;
 }
 
+.game_preview {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
 .game__title {
+  width: 100%;
   margin: 64px auto 0;
   text-align: center;
   font-weight: 600;
@@ -1895,8 +1918,10 @@ body {
 }
 
 .game__img {
+  display: block;
   max-height: calc(100% - 114px);
-  width: 100%;
+  width: 80%;
+  max-width: 500px;
   margin: 0 auto;
   padding: 32px 0;
   -o-object-fit: contain;
@@ -1947,6 +1972,77 @@ body {
   background-color: #FFFFFF;
 }
 
+.notification {
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 46px 60px;
+  background-color: #FFFFFF;
+  -webkit-box-shadow: 0 4px 10px 3px rgba(84, 84, 84, 0.2);
+          box-shadow: 0 4px 10px 3px rgba(84, 84, 84, 0.2);
+  border-radius: 4px;
+}
+
+.notification::before {
+  content: '';
+  position: absolute;
+  left: 80px;
+  top: 100%;
+  width: 104px;
+  height: 36px;
+  background-image: url("../img/rules-part.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+}
+
+.notification__text {
+  text-align: center;
+  font-weight: 700;
+  font-size: 31px;
+  line-height: 41px;
+  color: #0F6BB1;
+}
+
+.notification__picture {
+  position: absolute;
+  width: 96px;
+  height: 96px;
+  left: 7px;
+  bottom: -69px;
+}
+
+.notification__result {
+  margin-top: 72px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 16px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #565C61;
+}
+
+.notification__result_blue {
+  color: #0F6BB1;
+}
+
+.notification__result_red {
+  color: #D10101;
+}
+
+.notification__result_green {
+  color: #008001;
+}
+
 .rules .game__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1969,28 +2065,9 @@ body {
 }
 
 .rules__box {
-  position: relative;
   max-width: 650px;
   width: 100%;
-  margin: 0 auto;
   padding: 43px 34px 54px 57px;
-  background-color: #FFFFFF;
-  -webkit-box-shadow: 0 4px 10px 3px rgba(84, 84, 84, 0.2);
-          box-shadow: 0 4px 10px 3px rgba(84, 84, 84, 0.2);
-  border-radius: 4px;
-}
-
-.rules__box::before {
-  content: '';
-  position: absolute;
-  left: 80px;
-  top: 100%;
-  width: 104px;
-  height: 36px;
-  background-image: url("../img/rules-part.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: bottom right;
 }
 
 .rules__subtitle {
@@ -2019,12 +2096,474 @@ body {
   background-repeat: no-repeat;
 }
 
-.rules__picture {
-  position: absolute;
-  width: 96px;
-  height: 96px;
-  left: 7px;
-  bottom: -69px;
+.countdown {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.countdown__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 112px;
+  height: 112px;
+  font-size: 34px;
+  line-height: 1;
+  color: #FFFFFF;
+  border-radius: 50%;
+  background-color: #0F6BB1;
+}
+
+.countdown__item.countdown-css {
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-name: countdown;
+          animation-name: countdown;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-iteration-count: 6;
+          animation-iteration-count: 6;
+}
+
+@-webkit-keyframes countdown {
+  from {
+    -webkit-transform: scale(100%);
+            transform: scale(100%);
+  }
+
+  to {
+    -webkit-transform: scale(150%);
+            transform: scale(150%);
+  }
+}
+
+@keyframes countdown {
+  from {
+    -webkit-transform: scale(100%);
+            transform: scale(100%);
+  }
+
+  to {
+    -webkit-transform: scale(150%);
+            transform: scale(150%);
+  }
+}
+
+.result .game__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.result .game__btns {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.game__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+  padding: 5px 16px 16px;
+}
+
+.game__area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.game__description {
+  text-align: center;
+  margin-bottom: 64px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 51px;
+  gap: 32px;
+}
+
+.data_bottom {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.data__item {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.data__item span {
+  display: inline-block;
+  margin-left: 12px;
+  color: #FB9E00;
+}
+
+.data__btn {
+  padding: 15px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #3A4155;
+  background-color: #DDE1E6;
+  border: none;
+  -webkit-transition: all linear 0.2s;
+  -o-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.data__btn:hover {
+  background-color: #ececec;
+}
+
+.comparing__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 32px;
+  width: 100%;
+}
+
+.comparing__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 280px;
+  width: 100%;
+  padding: 32px 16px;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 59px;
+  color: #FFFFFF;
+  background-color: #E092AA;
+  border-radius: 4px;
+}
+
+.comparing__item_green {
+  background-color: #92E09D;
+}
+
+.comparing__bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 368px;
+  width: 100%;
+  margin-top: 32px;
+  padding: 32px;
+  background-color: #F6F6F6;
+  border-radius: 8px;
+}
+
+.comparing__answer {
+  font-size: 16px;
+  line-height: 20px;
+  color: #3A4155;
+  background-color: transparent;
+  border: none;
+}
+
+.comparing__icon {
+  margin-bottom: 7px;
+  font-size: 54px;
+  color: #0F6BB1;
+  cursor: pointer;
+  -webkit-transition: all linear 0.2s;
+  -o-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+}
+
+.comparing__icon:hover {
+  color: #718da3;
+}
+
+.examples__box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 16px;
+}
+
+.examples__top .examples__item:nth-child(odd) {
+  background-color: #FDCF83;
+}
+
+.examples__bottom {
+  margin-top: 32px;
+}
+
+.examples__bottom .examples__item {
+  cursor: pointer;
+  -webkit-transition: all linear 0.2s;
+  -o-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+}
+
+.examples__bottom .examples__item:hover {
+  background-color: #ECECEC;
+}
+
+.examples__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 112px;
+  height: 112px;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  color: #3A4155;
+  border: none;
+  border-radius: 4px;
+  background-color: #F6F6F6;
+}
+
+.find-number {
+  margin: 8px 0;
+  padding: 16px 0;
+  border-radius: 4px;
+}
+
+.find-number__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 320px;
+  width: 100%;
+  padding: 12px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #FFFFFF;
+  -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+}
+
+.find-number__title span {
+  margin-left: 8px;
+  font-size: 32px;
+  line-height: 39px;
+}
+
+.find-number__wrapper {
+  display: grid;
+  gap: 10px;
+  max-width: 80%;
+  width: 100%;
+  margin: 24px 0 0;
+}
+
+.find-number__item {
+  height: 42px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+}
+
+.find-number__item:hover {
+  -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
+}
+
+.animation-blink {
+  -webkit-animation: blink .4s ease-in infinite alternate;
+          animation: blink .4s ease-in infinite alternate;
+}
+
+@-webkit-keyframes blink {
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  100% {
+    opacity: 0;
+  }
+}
+
+.animation-scale {
+  -webkit-animation: scale .4s ease-in infinite alternate;
+          animation: scale .4s ease-in infinite alternate;
+}
+
+@-webkit-keyframes scale {
+  100% {
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+  }
+}
+
+@keyframes scale {
+  100% {
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+  }
+}
+
+.animation-rotate div {
+  -webkit-animation: rotate .6s linear infinite;
+          animation: rotate .6s linear infinite;
+}
+
+@-webkit-keyframes rotate {
+  25% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+
+  75% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+}
+
+@keyframes rotate {
+  25% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+
+  75% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+}
+
+.find-number__item--green {
+  background-color: #20bf35;
+}
+
+.find-number__item--pink {
+  background-color: #bf2051;
+}
+
+.find-number__item--red {
+  background-color: #bf2020;
+}
+
+.find-number__item--yellow {
+  background-color: #fbe200;
+}
+
+.find-number__item--blue {
+  background-color: #008bca;
 }
 
 @media (min-width: 1024px) {
@@ -2932,6 +3471,11 @@ body {
     line-height: 17px;
   }
 
+  .notification__text {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
   .rules__title {
     margin-top: 16px;
     text-align: center;
@@ -2957,6 +3501,97 @@ body {
   .rules__box::before,
   .rules__picture {
     display: none;
+  }
+
+  .result .game__btn {
+    width: 100%;
+  }
+
+  .game__inner {
+    padding: 16px;
+  }
+
+  .data {
+    height: unset;
+  }
+
+  .data_bottom {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 8px;
+  }
+
+  .data_bottom .data__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+  }
+
+  .data_bottom .data__btn {
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .data__item {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .data__btn {
+    font-size: 14px;
+    line-height: 17px;
+    padding: 12px;
+  }
+
+  .game__description {
+    margin-bottom: 32px;
+  }
+
+  .comparing__top {
+    gap: 16px;
+  }
+
+  .comparing__item {
+    max-width: calc((100% - 16px) / 2);
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .comparing__bottom {
+    margin-top: 16px;
+    padding: 16px;
+  }
+
+  .comparing__icon {
+    font-size: 44px;
+  }
+
+  .examples__item {
+    width: 54px;
+    height: 54px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .find-number__title,
+  .find-number__wrapper {
+    max-width: calc(100% - 30px);
+  }
+
+  .find-number__title {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  .find-number__title span {
+    font-size: 28px;
+    line-height: 32px;
   }
 }
 
@@ -2985,6 +3620,11 @@ body {
   .payment__icon {
     font-size: 15px;
   }
+
+  .comparing__item {
+    font-size: 26px;
+    line-height: 30px;
+  }
 }
 
 @media (max-width: 414px) {
@@ -3001,6 +3641,15 @@ body {
   }
 }
 
+@media (max-width: 370px) {
+  .examples__item {
+    width: 44px;
+    height: 44px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
 @media (max-width: 360px) {
   .rating__item {
     grid-template-columns: 51px 120px 66px auto;
@@ -3014,5 +3663,68 @@ body {
 
   .rules__box {
     margin-top: 16px;
+  }
+}
+
+@media (max-width: 1400px) and (min-width: 1025px) {
+  .game__description {
+    margin-bottom: 32px;
+  }
+
+  .comparing__top {
+    gap: 16px;
+  }
+
+  .comparing__item {
+    max-width: 220px;
+    padding: 24px 16px;
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .comparing__bottom {
+    max-width: 320px;
+    margin-top: 16px;
+    padding: 24px;
+  }
+
+  .comparing__icon {
+    margin-bottom: 4px;
+    font-size: 46px;
+  }
+
+  .examples__item {
+    width: 80px;
+    height: 80px;
+    font-size: 24px;
+    line-height: 26px;
+  }
+
+  .find-number__title {
+    padding: 6px 12px;
+  }
+
+  .find-number__title span {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .find-number__item {
+    height: 38px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .find-number__wrapper {
+    margin-top: 80px;
+  }
+
+  .find-number__item {
+    height: 80px;
+    font-size: 32px;
+    line-height: 40px;
   }
 }
