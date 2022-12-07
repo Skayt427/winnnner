@@ -247,6 +247,10 @@ body {
   display: none;
 }
 
+.game .js-tabs-item:not(.active) {
+  display: none;
+}
+
 .header {
   padding: 0 90px;
   background-color: #0F6BB1;

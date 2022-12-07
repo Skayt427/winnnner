@@ -1,3 +1,5 @@
+const { active } = require("browser-sync");
+
 document.addEventListener("DOMContentLoaded", function () {
   AOS.init();
 
@@ -135,7 +137,9 @@ document.addEventListener("DOMContentLoaded", function () {
       let tabWrapper = this.closest('.js-tabs');
       let content = tabWrapper.querySelector('.js-tabs-item[data-tab="' + id + '"]');
 
-      tabWrapper.querySelector('.js-tabs-btn.active').classList.remove('active');
+      if (tabWrapper.querySelector('.js-tabs-btn.active')) {
+        tabWrapper.querySelector('.js-tabs-btn.active').classList.remove('active');
+      };
       this.classList.add('active');
 
       tabWrapper.querySelector('.js-tabs-item.active').classList.remove('active');
@@ -152,6 +156,12 @@ document.addEventListener("DOMContentLoaded", function () {
     document.execCommand("copy");
   });
 
+  // Запуск фуллскрина игры
+  let initFullscreen = document.querySelector('.game__btn[data-tab="game-2"]');
+
+  initFullscreen.addEventListener('click', function () {
+    document.querySelector('.wrapper').classList.add('fullscreen');
+  });
 
   // Модалки
   let modal = document.querySelectorAll('.js-modal');

@@ -111,3 +111,11 @@ body {
 .js-modal:not(.active) {
   display: none;
 }
+
+.game {
+  .js-tabs-item {
+    &:not(.active) {
+      display: none;
+    }
+  }
+}
