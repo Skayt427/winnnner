@@ -1,5 +1,3 @@
-const { active } = require("browser-sync");
-
 document.addEventListener("DOMContentLoaded", function () {
   AOS.init();
 
