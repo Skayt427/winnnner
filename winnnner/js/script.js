@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  AOS.init();
-
   // Меню
   let menu = document.querySelector('.js-menu');
   let burger = document.querySelector('.js-burger');
@@ -58,9 +56,15 @@ document.addEventListener("DOMContentLoaded", function () {
       };
       this.classList.add('active');
       if (activeContent) {
-        activeContent.classList.remove('active');
+        // activeContent.classList.remove('active');
+        activeContent.classList.remove('active', 'aos-init', 'aos-animate');
+        activeContent.removeAttribute('data-aos');
       };
-      content.classList.add('active');
+      // content.classList.add('active');
+      content.dataset.aos = "fade-down";
+      content.classList.add('active', 'aos-init', 'aos-animate');
+
+
       // Открытие пунктов в меню, конец
     });
   });
@@ -124,6 +128,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   ratingTableBtn.addEventListener('click', function () {
     ratingTable.classList.toggle('active');
+    // ratingTable.querySelector('.rating__wrapper').classList.add('aos-animate', 'aos-init');
+    ratingTable.querySelector('.rating__wrapper').dataset.aos = "fade-up";
+
+    AOS.refreshHard();
   });
 
   // Табы
@@ -179,33 +187,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   // Отсчет перед началом игры (цифра в синем круге)
-  let countdown = document.querySelector('.js-countdown-item');
-  if (countdown) {
+  let countdownItem = document.querySelector('.js-countdown-item');
+  if (countdownItem) {
     // начало отсчета берет из html
-    let countdownStartValue = countdown.textContent;
+    let countdownStartValue = countdownItem.textContent;
     // добавление длительности анимации
-    countdown.style.animationIterationCount = countdownStartValue * 2;
+    // countdownItem.style.animationIterationCount = countdownStartValue * 2;
     let countdownValue = countdownStartValue;
 
     function countdownChange() {
       if (countdownValue == 0) {
         // конец отсчета
-        countdown.closest('.countdown').style.display = 'none';
+        countdownItem.closest('.countdown').classList.add('none');
       } else {
         countdownValue--;
       }
-      countdown.innerHTML = countdownValue;
+      countdownItem.innerHTML = countdownValue;
     };
 
-    function countdownStart() {
-      countdown.classList.add('countdown-css');
+    function countdownStartFunc() {
+      countdownItem.classList.add('countdown-css');
       // цикл вызова функции изменения
       let countdownInterval = setInterval(() => countdownChange(), 1000);
       // остановливает интервал
       setTimeout(() => { clearInterval(countdownInterval); countdownChange(); }, countdownStartValue + '000');
     }
-    countdownStart();
-  }
 
+    // Запуск отсчета
+    document.querySelector('.game__btn[data-tab="game-3"]').addEventListener('click', countdownStartFunc);
+  }
   // Отсчет перед началом игры, конец
+
+  AOS.init({
+    duration: 200,
+  });
 });

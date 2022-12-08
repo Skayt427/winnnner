@@ -2140,8 +2140,12 @@ body {
           animation-name: countdown;
   -webkit-animation-direction: alternate;
           animation-direction: alternate;
-  -webkit-animation-iteration-count: 6;
-          animation-iteration-count: 6;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.countdown:not(.none) + .game__inner {
+  display: none;
 }
 
 @-webkit-keyframes countdown {
@@ -2662,9 +2666,12 @@ body {
 
 @media (max-width: 1340px) {
   .main,
-  .header,
-  .footer {
+  .header {
     padding: 0 60px 0 0;
+  }
+
+  .footer {
+    padding: 0 75px 0 0;
   }
 }
 

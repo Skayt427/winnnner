@@ -2724,8 +2724,12 @@
       animation-duration: 0.5s;
       animation-name: countdown;
       animation-direction: alternate;
-      animation-iteration-count: 6;
+      animation-iteration-count: infinite;
     }
+  }
+
+  &:not(.none)+.game__inner {
+    display: none;
   }
 }
 
