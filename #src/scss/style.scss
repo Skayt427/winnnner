@@ -2622,7 +2622,7 @@
       top: 4px;
       left: -26px;
       width: 10px;
-      height: 40px;
+      height: 24px;
       background-image: url('../img/!.svg');
       background-size: contain;
       background-position: center;
@@ -2693,6 +2693,10 @@
 
   .rules__text {
     margin-top: 8px;
+
+    &::before {
+      top: -30px;
+    }
   }
 
   .rules__box::before,
@@ -2874,6 +2878,8 @@
 
   .game__description {
     margin-bottom: 32px;
+    font-size: 16px;
+    line-height: 20px;
   }
 }
 
@@ -2927,7 +2933,7 @@
 
   &__icon {
     margin-bottom: 7px;
-    font-size: 54px;
+    font-size: 53px;
     color: $color-blue;
     cursor: pointer;
     transition: all linear 0.2s;
@@ -2964,29 +2970,31 @@
 
 @media (max-width: 680px) {
   .comparing__top {
-    gap: 16px;
+    gap: 8px;
   }
 
   .comparing__item {
-    max-width: calc((100% - 16px) / 2);
-    font-size: 40px;
-    line-height: 48px;
+    max-width: calc((100% - 8px) / 2);
+    padding: 20.5px 16px;
+    font-size: 32px;
+    line-height: 39px;
   }
 
   .comparing__bottom {
-    margin-top: 16px;
-    padding: 16px;
+    margin-top: 30px;
+    padding: 30px;
   }
 
-  .comparing__icon {
-    font-size: 44px;
+  .comparing__answer {
+    font-size: 14px;
+    line-height: 17px;
   }
 }
 
 @media (max-width: 480px) {
   .comparing__item {
-    font-size: 26px;
-    line-height: 30px;
+    font-size: 24px;
+    line-height: 38px;
   }
 }
 
@@ -3006,7 +3014,9 @@
   }
 
   &__bottom {
-    margin-top: 32px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #DDE1E6;
 
     .examples__item {
       cursor: pointer;
@@ -3034,12 +3044,23 @@
   }
 }
 
-@media (max-width: 1400px) and (min-width: 1025px) {
+@media (max-width: 1100px) {
   .examples__item {
-    width: 80px;
-    height: 80px;
-    font-size: 24px;
-    line-height: 26px;
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 767px) {
+  .examples__box {
+    gap: 8px;
+  }
+
+  .examples__item {
+    width: 84px;
+    height: 84px;
+    font-size: 32px;
+    line-height: 39px;
   }
 }
 
@@ -3102,6 +3123,7 @@
     color: $color-white;
     border: none;
     cursor: pointer;
+    border-radius: 6px;
 
     &:hover {
       box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);

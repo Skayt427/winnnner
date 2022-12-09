@@ -2093,7 +2093,7 @@ body {
   top: 4px;
   left: -26px;
   width: 10px;
-  height: 40px;
+  height: 24px;
   background-image: url("../img/!.svg");
   background-size: contain;
   background-position: center;
@@ -2349,7 +2349,7 @@ body {
 
 .comparing__icon {
   margin-bottom: 7px;
-  font-size: 54px;
+  font-size: 53px;
   color: #0F6BB1;
   cursor: pointer;
   -webkit-transition: all linear 0.2s;
@@ -2378,7 +2378,9 @@ body {
 }
 
 .examples__bottom {
-  margin-top: 32px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #DDE1E6;
 }
 
 .examples__bottom .examples__item {
@@ -2462,6 +2464,7 @@ body {
   color: #FFFFFF;
   border: none;
   cursor: pointer;
+  border-radius: 6px;
 }
 
 .find-number__item:hover {
@@ -2702,6 +2705,13 @@ body {
 
   .stat__total-value {
     width: 100px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .examples__item {
+    width: 100px;
+    height: 100px;
   }
 }
 
@@ -3219,6 +3229,17 @@ body {
   .rating__item .rating__cell:nth-child(2) {
     padding-left: 40px;
   }
+
+  .examples__box {
+    gap: 8px;
+  }
+
+  .examples__item {
+    width: 84px;
+    height: 84px;
+    font-size: 32px;
+    line-height: 39px;
+  }
 }
 
 @media (max-width: 680px) {
@@ -3509,6 +3530,10 @@ body {
     margin-top: 8px;
   }
 
+  .rules__text::before {
+    top: -30px;
+  }
+
   .rules__box::before,
   .rules__picture {
     display: none;
@@ -3562,25 +3587,29 @@ body {
 
   .game__description {
     margin-bottom: 32px;
+    font-size: 16px;
+    line-height: 20px;
   }
 
   .comparing__top {
-    gap: 16px;
+    gap: 8px;
   }
 
   .comparing__item {
-    max-width: calc((100% - 16px) / 2);
-    font-size: 40px;
-    line-height: 48px;
+    max-width: calc((100% - 8px) / 2);
+    padding: 20.5px 16px;
+    font-size: 32px;
+    line-height: 39px;
   }
 
   .comparing__bottom {
-    margin-top: 16px;
-    padding: 16px;
+    margin-top: 30px;
+    padding: 30px;
   }
 
-  .comparing__icon {
-    font-size: 44px;
+  .comparing__answer {
+    font-size: 14px;
+    line-height: 17px;
   }
 
   .examples__item {
@@ -3633,8 +3662,8 @@ body {
   }
 
   .comparing__item {
-    font-size: 26px;
-    line-height: 30px;
+    font-size: 24px;
+    line-height: 38px;
   }
 }
 
@@ -3702,13 +3731,6 @@ body {
   .comparing__icon {
     margin-bottom: 4px;
     font-size: 46px;
-  }
-
-  .examples__item {
-    width: 80px;
-    height: 80px;
-    font-size: 24px;
-    line-height: 26px;
   }
 
   .find-number__title {
