@@ -13,12 +13,12 @@
 </head>
 
 <body>
-  <!-- к wrapper добавлять класс fullscreen при запуске игры -->
   <div class="wrapper">
     <div class="content">
       <header class="header">
         <div class="container">
           <div class="header__wrapper">
+            <!-- По клику на бургер к menu добавлять/убрать active, откроет только меню -->
             <div class="burger burger_mobile js-burger-mobile">
               <span class="burger__line"></span>
             </div>
@@ -53,6 +53,11 @@
               </div>
             </div>
 
+            <!-- По клику вне меню
+            убрать у menu active
+            убрать у personal active
+            и актиквного menu__item
+            -->
             <div class="menu js-menu">
               <div class="menu__overlay"></div>
               <div class="menu__wrapper">
@@ -63,11 +68,24 @@
                     <div class="user__phone">+7 000 00-000-00</div>
                   </div>
 
+                  <!-- По клику на бургер к menu добавлять/убрать active, откроет только меню -->
                   <div class="burger js-burger">
                     <span class="burger__line"></span>
                   </div>
                 </div>
                 <ul class="menu__list">
+                  <!-- По клику на пункт меню
+                  к menu добавлять active и active-for-mobile, откроет контент меню
+                  к самому себе добавлять active, для цвета
+                  к personal добавлять active, откроет обертку пунктов меню 
+                  
+                  сами пункты меню както через вью по одному создаются
+                  им для анимации при появлении както так нужно (может и не нужно будет)
+                  пункт.classList.remove('aos-animate');
+                  setTimeout(function () {
+                    пункт.classList.add('aos-animate');
+                  }, 200);
+                  -->
                   <li class="menu__item js-menu-item" data-menu="1">
                     <span class="menu__icon icon-winner-winnings"></span>
                     <span class="menu__text">
@@ -276,6 +294,7 @@
                 <div class="personal__content js-menu-content" data-menu="3" data-aos="fade-down">
                   <div class="tabs js-tabs">
                     <div class="tabs__btns">
+                      <!-- По килику на кнопку добавлять ей и нужному modal__item класс active, у остальных убирать -->
                       <button type="button" class="tabs__btn js-tabs-btn active" data-tab="1">Мои подписки</button>
                       <button type="button" class="tabs__btn js-tabs-btn" data-tab="2">История покупок</button>
                     </div>
@@ -885,7 +904,7 @@
       <main class="main">
 
 <div class="main__wrapper container">
-  <div class="main__left">
+  <div class="main__top">
     <div class="box">
       <div class="box__left">
         <div class="box__icon icon-coin-circle"></div>
@@ -918,6 +937,18 @@
       </div>
     </div>
 
+    <div class="box js-box-players">
+      <div class="box__left">
+        <div class="box__icon icon-people"></div>
+      </div>
+      <div class="box__right">
+        <div class="box__title">Сейчас в игре</div>
+        <div class="box__value">175 678</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main__left">
     <div class="game js-game-area js-tabs">
 
       <!-- Превью -->
@@ -930,7 +961,8 @@
         </div>
 
         <div class="game__btns">
-          <button type="button" class="game__btn js-tabs-btn" data-tab="game-2">Турнир</button>
+          <!-- При запуске игры к wrapper добавлять класс fullscreen, при завершении убрать -->
+          <button type="button" class="game__btn js-tabs-btn" data-tab="game-2">Играть</button>
           <button type="button" class="game__btn">Тренировка</button>
         </div>
       </div>
@@ -963,7 +995,8 @@
       <div class="game__item js-tabs-item" data-tab="game-3">
         <!-- Отcчет -->
         <div class="countdown">
-          <!-- Для старта css анимации добавлять класс countdown-css -->
+          <!-- Для старта css анимации добавлять класс countdown-css
+          после отсчета добавить к countdown класс none, скроет отсчет и покажет игру -->
           <div class="countdown__item js-countdown-item">3</div>
         </div>
         <!-- Отcчет конец -->
@@ -1023,7 +1056,8 @@
       <!-- <div class="game__item js-tabs-item" data-tab="game-3"> -->
       <!-- Отcчет -->
       <!-- <div class="countdown"> -->
-      <!-- Для старта css анимации добавлять класс countdown-css -->
+      <!-- Для старта css анимации добавлять класс countdown-css
+          после отсчета добавить к countdown класс none, скроет отсчет и покажет игру -->
       <!-- <div class="countdown__item js-countdown-item">3</div> -->
       <!-- </div> -->
       <!-- Отcчет конец -->
@@ -1079,7 +1113,8 @@
       <!-- <div class="game__item js-tabs-item" data-tab="game-3"> -->
       <!-- Отcчет -->
       <!-- <div class="countdown"> -->
-      <!-- Для старта css анимации добавлять класс countdown-css -->
+      <!-- Для старта css анимации добавлять класс countdown-css
+          после отсчета добавить к countdown класс none, скроет отсчет и покажет игру -->
       <!-- <div class="countdown__item js-countdown-item">3</div> -->
       <!-- </div> -->
       <!-- Отcчет конец -->
@@ -1227,28 +1262,28 @@
 
   <div class="main__right">
     <div class="main__inner js-main-inner">
-      <div class="box js-box-players">
+      <div class="box box_half box_token box_link">
         <div class="box__left">
-          <div class="box__icon icon-people"></div>
+          <div class="box__icon icon-chess"></div>
         </div>
         <div class="box__right">
-          <div class="box__title">Сейчас в игре</div>
-          <div class="box__value">175 678</div>
+          <div class="box__title">Мои жетоны</div>
+          <div class="box__icon_mobile icon-chess"></div>
+          <div class="box__value">200</div>
+          <div class="box__subtitle">Купить</div>
+        </div>
+        <div class="box__add">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 12C0 18.6274 5.37258 24 12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12Z" fill="#0F6BB1" />
+            <path d="M14.712 12.504H12.624V14.544H11.076V12.504H9V11.04H11.076V9H12.624V11.04H14.712V12.504Z" fill="white" />
+          </svg>
         </div>
       </div>
 
-      <div class="box-wrapper">
-        <div class="box box_half box_link">
-          <div class="box__title">Мои жетоны</div>
-          <div class="box__value">7</div>
-          <div class="box__subtitle">Купить</div>
-        </div>
-
-        <div class="box box_half box_link">
-          <div class="box__title">Баланс</div>
-          <div class="box__value">1 200<span class="box__value-icon icon-coin-slashed"></span></div>
-          <div class="box__subtitle">Вывести</div>
-        </div>
+      <div class="box box_half box_link">
+        <div class="box__title">Баланс</div>
+        <div class="box__value">1 200<span class="box__value-icon icon-coin-slashed"></span></div>
+        <div class="box__subtitle">Вывести</div>
       </div>
 
       <div class="box">
@@ -1271,24 +1306,6 @@
           <div class="box__icon_mobile icon-coin-circle"></div>
           <div class="box__value">1 240<span class="box__value-icon icon-coin-slashed"></span></div>
           <div class="box__subtitle">Вывести</div>
-        </div>
-      </div>
-
-      <div class="box box_token box_link">
-        <div class="box__left">
-          <div class="box__icon icon-chess"></div>
-        </div>
-        <div class="box__right">
-          <div class="box__title">Мои жетоны</div>
-          <div class="box__icon_mobile icon-chess"></div>
-          <div class="box__value">200</div>
-          <div class="box__subtitle">Купить</div>
-        </div>
-        <div class="box__add">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 12C0 18.6274 5.37258 24 12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12Z" fill="#0F6BB1" />
-            <path d="M14.712 12.504H12.624V14.544H11.076V12.504H9V11.04H11.076V9H12.624V11.04H14.712V12.504Z" fill="white" />
-          </svg>
         </div>
       </div>
 
@@ -1396,22 +1413,32 @@
       </div>
     </div>
 
+    <!-- открытие с анимацией по клику на rating__btn
+    ('.rating__wrapper').classList.remove('aos-animate');
+    setTimeout(function () {
+      ('.rating').classList.toggle('active');
+      ('.rating__wrapper').querySelector('.rating__wrapper').classList.add('aos-animate');
+    }, 100);
+    -->
     <button type="button" class="rating__btn js-rating-btn">Свернуть/Развернуть</button>
   </div>
 </div>
 
 <!-- Добавлять active -->
 <div class="modal js-modal">
+  <!-- По клику на modal__overlay у modal убрать active -->
   <div class="modal__overlay js-modal-overlay"></div>
 
   <div class="modal__wrapper">
     <div class="modal__container">
+      <!-- По клику на modal__close у modal убрать active -->
       <div class="modal__close icon-close js-modal-close"></div>
 
       <div class="modal__title">Вход на сайт</div>
 
       <div class="modal__tabs js-tabs">
         <div class="modal__btns">
+          <!-- По килику на кнопку добавлять ей и нужному modal__item класс active, у остальных убирать -->
           <div class="modal__btn js-tabs-btn active" data-tab="1">Telegram</div>
           <div class="modal__btn js-tabs-btn" data-tab="2">WhatsApp</div>
         </div>

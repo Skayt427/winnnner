@@ -107,19 +107,19 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Ячейка Сейчас в игре, перенос на мобильных
-  let boxPlayers = document.querySelector('.js-box-players');
-  let mainInner = document.querySelector('.js-main-inner');
-  let gameArea = document.querySelector('.js-game-area');
+  // let boxPlayers = document.querySelector('.js-box-players');
+  // let mainInner = document.querySelector('.js-main-inner');
+  // let gameArea = document.querySelector('.js-game-area');
 
-  function adaptiveBoxPlayers() {
-    if (window.innerWidth <= 1024) {
-      gameArea.before(boxPlayers);
-    } else {
-      mainInner.prepend(boxPlayers);
-    };
-  };
-  adaptiveBoxPlayers();
-  window.addEventListener('resize', adaptiveBoxPlayers);
+  // function adaptiveBoxPlayers() {
+  //   if (window.innerWidth <= 1024) {
+  //     gameArea.before(boxPlayers);
+  //   } else {
+  //     mainInner.prepend(boxPlayers);
+  //   };
+  // };
+  // adaptiveBoxPlayers();
+  // window.addEventListener('resize', adaptiveBoxPlayers);
 
   // Скрытие/открытие рейтинга
   let ratingTable = document.querySelector('.js-rating');

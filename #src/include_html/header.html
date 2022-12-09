@@ -13,12 +13,12 @@
 </head>
 
 <body>
-  <!-- к wrapper добавлять класс fullscreen при запуске игры -->
   <div class="wrapper">
     <div class="content">
       <header class="header">
         <div class="container">
           <div class="header__wrapper">
+            <!-- По клику на бургер к menu добавлять/убрать active, откроет только меню -->
             <div class="burger burger_mobile js-burger-mobile">
               <span class="burger__line"></span>
             </div>
@@ -53,6 +53,11 @@
               </div>
             </div>
 
+            <!-- По клику вне меню
+            убрать у menu active
+            убрать у personal active
+            и актиквного menu__item
+            -->
             <div class="menu js-menu">
               <div class="menu__overlay"></div>
               <div class="menu__wrapper">
@@ -63,11 +68,24 @@
                     <div class="user__phone">+7 000 00-000-00</div>
                   </div>
 
+                  <!-- По клику на бургер к menu добавлять/убрать active, откроет только меню -->
                   <div class="burger js-burger">
                     <span class="burger__line"></span>
                   </div>
                 </div>
                 <ul class="menu__list">
+                  <!-- По клику на пункт меню
+                  к menu добавлять active и active-for-mobile, откроет контент меню
+                  к самому себе добавлять active, для цвета
+                  к personal добавлять active, откроет обертку пунктов меню 
+                  
+                  сами пункты меню както через вью по одному создаются
+                  им для анимации при появлении както так нужно (может и не нужно будет)
+                  пункт.classList.remove('aos-animate');
+                  setTimeout(function () {
+                    пункт.classList.add('aos-animate');
+                  }, 200);
+                  -->
                   <li class="menu__item js-menu-item" data-menu="1">
                     <span class="menu__icon icon-winner-winnings"></span>
                     <span class="menu__text">
@@ -276,6 +294,7 @@
                 <div class="personal__content js-menu-content" data-menu="3" data-aos="fade-down">
                   <div class="tabs js-tabs">
                     <div class="tabs__btns">
+                      <!-- По килику на кнопку добавлять ей и нужному modal__item класс active, у остальных убирать -->
                       <button type="button" class="tabs__btn js-tabs-btn active" data-tab="1">Мои подписки</button>
                       <button type="button" class="tabs__btn js-tabs-btn" data-tab="2">История покупок</button>
                     </div>
