@@ -56,15 +56,14 @@ document.addEventListener("DOMContentLoaded", function () {
       };
       this.classList.add('active');
       if (activeContent) {
-        // activeContent.classList.remove('active');
-        activeContent.classList.remove('active', 'aos-init', 'aos-animate');
-        activeContent.removeAttribute('data-aos');
+        activeContent.classList.remove('active');
       };
-      // content.classList.add('active');
-      content.dataset.aos = "fade-down";
-      content.classList.add('active', 'aos-init', 'aos-animate');
 
-
+      content.classList.add('active');
+      content.classList.remove('aos-animate');
+      setTimeout(function () {
+        content.classList.add('aos-animate');
+      }, 200);
       // Открытие пунктов в меню, конец
     });
   });
@@ -127,11 +126,11 @@ document.addEventListener("DOMContentLoaded", function () {
   let ratingTableBtn = document.querySelector('.js-rating-btn');
 
   ratingTableBtn.addEventListener('click', function () {
-    ratingTable.classList.toggle('active');
-    // ratingTable.querySelector('.rating__wrapper').classList.add('aos-animate', 'aos-init');
-    ratingTable.querySelector('.rating__wrapper').dataset.aos = "fade-up";
-
-    AOS.refreshHard();
+    ratingTable.querySelector('.rating__wrapper').classList.remove('aos-animate');
+    setTimeout(function () {
+      ratingTable.classList.toggle('active');
+      ratingTable.querySelector('.rating__wrapper').classList.add('aos-animate');
+    }, 100);
   });
 
   // Табы
@@ -218,7 +217,5 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   // Отсчет перед началом игры, конец
 
-  AOS.init({
-    duration: 200,
-  });
+  AOS.init();
 });
