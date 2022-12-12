@@ -326,6 +326,7 @@ body {
 
 .menu__top {
   position: relative;
+  height: 123px;
   width: 60px;
   background-color: #0F6BB1;
   border-bottom: 1px solid #FFFFFF;
@@ -421,6 +422,10 @@ body {
   width: 100vw;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.menu .burger {
+  height: 122px;
 }
 
 .menu.active .burger {
