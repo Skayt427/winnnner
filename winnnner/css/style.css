@@ -1144,7 +1144,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 100%;
+  min-height: 100%;
 }
 
 .personal__content.js-menu-content:not(.active) {
@@ -3099,7 +3099,7 @@ body {
   }
 
   .personal {
-    padding: 16px 16px 0;
+    padding: 16px;
   }
 
   .modal__close {

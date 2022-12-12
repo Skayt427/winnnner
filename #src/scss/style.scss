@@ -1459,7 +1459,7 @@
   &__content {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    min-height: 100%;
 
     // Закрытие пункта меню
     &.js-menu-content:not(.active) {
@@ -1523,7 +1523,7 @@
   }
 
   .personal {
-    padding: 16px 16px 0;
+    padding: 16px;
   }
 }
 
