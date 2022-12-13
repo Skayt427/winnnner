@@ -32,8 +32,8 @@
 
 @font-face {
   font-family: 'icomoon';
-  src: url("../fonts/icomoon.eot?hq6pcj");
-  src: url("../fonts/icomoon.eot?hq6pcj#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?hq6pcj") format("truetype"), url("../fonts/icomoon.woff?hq6pcj") format("woff"), url("../fonts/icomoon.svg?hq6pcj#icomoon") format("svg");
+  src: url("../fonts/icomoon.eot?pl4h81");
+  src: url("../fonts/icomoon.eot?pl4h81#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?pl4h81") format("truetype"), url("../fonts/icomoon.woff?pl4h81") format("woff"), url("../fonts/icomoon.svg?pl4h81#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -54,6 +54,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-arrow-left:before {
+  content: "\e913";
+  color: #fff;
+}
+
 .icon-comparing-down:before {
   content: "\e915";
 }
@@ -68,10 +73,6 @@
 
 .icon-close:before {
   content: "\e914";
-}
-
-.icon-arrow-left:before {
-  content: "\e913";
 }
 
 .icon-info:before {
@@ -684,7 +685,7 @@ body {
   line-height: 17px;
 }
 
-.user__phone {
+.user__data {
   margin-top: 4px;
 }
 
@@ -1168,32 +1169,15 @@ body {
 
 .back {
   display: none;
-  margin-top: auto;
-  width: calc(100% + 32px);
-  margin-left: -16px;
-}
-
-.back__btn {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 52px;
-  width: 100%;
-  margin-top: 32px;
-  background-color: #FFFFFF;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 14px;
+  padding: 10px;
+  background-color: transparent;
   border: none;
-  border-top: 1px solid #EAEAEA;
-}
-
-.back__icon {
-  font-size: 14px;
-  margin-right: 16px;
 }
 
 .stat {
@@ -2908,6 +2892,27 @@ body {
     width: 100%;
   }
 
+  .menu.active-for-mobile .menu__top {
+    height: 45px;
+  }
+
+  .menu.active-for-mobile .user {
+    display: none;
+  }
+
+  .menu.active-for-mobile .burger {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    right: 14px;
+  }
+
+  .menu.active-for-mobile .personal.active {
+    top: 45px;
+    height: calc(100% - 45px);
+  }
+
   .personal {
     position: fixed;
     top: 136px;
@@ -3094,8 +3099,10 @@ body {
     display: none;
   }
 
-  .back {
-    display: block;
+  .active-for-mobile .back {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 
   .personal {
@@ -3168,14 +3175,6 @@ body {
   .personal__title {
     font-size: 18px;
     line-height: 22px;
-  }
-
-  .back__btn {
-    height: 52px;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 17px;
-    color: #737D87;
   }
 
   .stat_winnings .stat__item {
