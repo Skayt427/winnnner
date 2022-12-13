@@ -1784,8 +1784,8 @@
   .subscription__status {
     padding-bottom: 16px;
     font-weight: 400;
-    font-size: 24px;
-    line-height: 29px;
+    font-size: 20px;
+    line-height: 22px;
     border-bottom: 1px solid #3B4256;
   }
 
@@ -1887,7 +1887,7 @@
 .payment {
 
   &__title {
-    margin-top: 21px;
+    margin-top: 14px;
     font-weight: 400;
     font-size: 14px;
     line-height: 16px;
@@ -1914,6 +1914,14 @@
     border: 1px solid #EAEAEA;
     color: $color-grey;
     border-radius: 4px;
+  }
+
+  &__mes {
+    margin-top: 6px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FB9E00;
   }
 
   &__wrapper {
@@ -2055,6 +2063,14 @@
 }
 
 @media (max-width: 768px) {
+  .payment__title {
+    margin-top: 16px;
+  }
+
+  .payment__wrapper {
+    margin-top: 10px;
+  }
+
   .payment__wallet {
     font-size: 14px;
     line-height: 17px;

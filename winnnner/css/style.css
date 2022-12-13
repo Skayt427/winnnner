@@ -1436,7 +1436,7 @@ body {
 }
 
 .payment__title {
-  margin-top: 21px;
+  margin-top: 14px;
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;
@@ -1463,6 +1463,14 @@ body {
   border: 1px solid #EAEAEA;
   color: #737D87;
   border-radius: 4px;
+}
+
+.payment__mes {
+  margin-top: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #FB9E00;
 }
 
 .payment__wrapper {
@@ -3211,8 +3219,8 @@ body {
   .subscription__status {
     padding-bottom: 16px;
     font-weight: 400;
-    font-size: 24px;
-    line-height: 29px;
+    font-size: 20px;
+    line-height: 22px;
     border-bottom: 1px solid #3B4256;
   }
 
@@ -3248,6 +3256,14 @@ body {
 
   .coin__icon {
     font-size: 9px;
+  }
+
+  .payment__title {
+    margin-top: 16px;
+  }
+
+  .payment__wrapper {
+    margin-top: 10px;
   }
 
   .payment__wallet {
