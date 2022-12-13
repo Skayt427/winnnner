@@ -2011,6 +2011,10 @@
     line-height: 17px;
     color: #FB9E00;
   }
+
+  .label {
+    margin-top: 4px;
+  }
 }
 
 .label {
@@ -2059,6 +2063,24 @@
 
   &+.input {
     margin-top: 18px;
+  }
+
+  &-box {
+    position: relative;
+
+    .input {
+      padding: 4px 38px 4px 20px;
+    }
+  }
+
+  &-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 14px;
+    font-size: 12px;
+    font-weight: 300;
+    color: #000;
   }
 }
 

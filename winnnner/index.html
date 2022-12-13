@@ -458,7 +458,8 @@
                         <div class="subscription__subtitle">Участие в турнире</div>
                         <div class="subscription__rate">
                           Лимит на покупки в день: 0 из у.е.
-                          <br>
+                        </div>
+                        <div class="subscription__rate">
                           Курс оплаты: 1 W = 1 у.е.
                         </div>
 
@@ -623,14 +624,16 @@
                     </div>
                     <div class="tabs__wrapper">
                       <div class="tabs__item js-tabs-item active" data-tab="1">
-                        <div class="subscription__rate"></div>
-
                         <div class="payment">
                           <div class="payment__wallet">Мой кошелек: <span>215 W</span></div>
+                          <div class="subscription__rate">Курс оплаты: 1W = 1 KZT</div>
 
-                          <label class="payment__label">
+                          <label class="label">
                             Сумма вывода:
-                            <input type="number" class="payment__input" placeholder="0">
+                            <div class="input-box">
+                              <input type="number" class="input" placeholder="Введите сумму">
+                              <span class="input-icon icon-coin"></span>
+                            </div>
                           </label>
                           <div class="payment__mes">Недостаточно средств на счете</div>
 
