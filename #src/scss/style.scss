@@ -1511,6 +1511,7 @@
   padding: 10px;
   background-color: transparent;
   border: none;
+  color: #d9d9d9;
 }
 
 @media (max-width: 1280px) {
@@ -1798,7 +1799,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  margin-top: 5px;
+  margin-top: 28px;
 
   &__item {
     display: flex;
@@ -1814,7 +1815,7 @@
     cursor: pointer;
     transition: all linear 0.2s;
 
-    &:hover {
+    &:not(.active):hover {
       color: $color-white;
       border: 1px solid $color-blue;
       background-color: $color-blue;
@@ -1822,6 +1823,10 @@
       .coin__price {
         border-top: 1px solid $color-white;
       }
+    }
+
+    &.active {
+      background-color: rgba(15, 107, 177, 0.33);
     }
   }
 
@@ -1887,7 +1892,7 @@
 .payment {
 
   &__title {
-    margin-top: 14px;
+    margin-top: 26px;
     font-weight: 400;
     font-size: 14px;
     line-height: 16px;
@@ -1922,6 +1927,15 @@
     font-size: 14px;
     line-height: 17px;
     color: #FB9E00;
+  }
+
+  &__text {
+    margin-top: 11px;
+    margin-bottom: 9px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #3A4155;
   }
 
   &__wrapper {
@@ -2013,7 +2027,7 @@
   }
 
   .label {
-    margin-top: 4px;
+    margin-top: 16px;
   }
 }
 
@@ -2244,10 +2258,10 @@
 
   &__item {
     list-style-type: disc;
-    margin: 36px 0 0 50px;
+    margin: 36px 0 0 17px;
 
     &:first-child {
-      margin-top: 20px;
+      margin-top: 8px;
     }
   }
 
@@ -2263,6 +2277,10 @@
 }
 
 @media (max-width: 768px) {
+  .info__item {
+    margin-top: 16px;
+  }
+
   .info__link {
     margin-top: 0;
   }

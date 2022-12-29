@@ -54,9 +54,20 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-wallet-arrow:before {
+  content: "\e918";
+}
+
+.icon-trophy:before {
+  content: "\e919";
+}
+
+.icon-clock:before {
+  content: "\e91a";
+}
+
 .icon-arrow-left:before {
   content: "\e913";
-  color: #fff;
 }
 
 .icon-comparing-down:before {
@@ -1178,6 +1189,7 @@ body {
   padding: 10px;
   background-color: transparent;
   border: none;
+  color: #d9d9d9;
 }
 
 .stat {
@@ -1370,7 +1382,7 @@ body {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 14px;
-  margin-top: 5px;
+  margin-top: 28px;
 }
 
 .coin__item {
@@ -1399,14 +1411,18 @@ body {
   transition: all linear 0.2s;
 }
 
-.coin__item:hover {
+.coin__item:not(.active):hover {
   color: #FFFFFF;
   border: 1px solid #0F6BB1;
   background-color: #0F6BB1;
 }
 
-.coin__item:hover .coin__price {
+.coin__item:not(.active):hover .coin__price {
   border-top: 1px solid #FFFFFF;
+}
+
+.coin__item.active {
+  background-color: rgba(15, 107, 177, 0.33);
 }
 
 .coin__days {
@@ -1436,7 +1452,7 @@ body {
 }
 
 .payment__title {
-  margin-top: 14px;
+  margin-top: 26px;
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;
@@ -1471,6 +1487,15 @@ body {
   font-size: 14px;
   line-height: 17px;
   color: #FB9E00;
+}
+
+.payment__text {
+  margin-top: 11px;
+  margin-bottom: 9px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #3A4155;
 }
 
 .payment__wrapper {
@@ -1582,7 +1607,7 @@ body {
 }
 
 .payment .label {
-  margin-top: 4px;
+  margin-top: 16px;
 }
 
 .label {
@@ -1779,11 +1804,11 @@ body {
 
 .info__item {
   list-style-type: disc;
-  margin: 36px 0 0 50px;
+  margin: 36px 0 0 17px;
 }
 
 .info__item:first-child {
-  margin-top: 20px;
+  margin-top: 8px;
 }
 
 .info__link {
@@ -3307,6 +3332,10 @@ body {
   .message__empty {
     font-size: 14px;
     line-height: 17px;
+  }
+
+  .info__item {
+    margin-top: 16px;
   }
 
   .info__link {

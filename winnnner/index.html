@@ -91,7 +91,7 @@
                   }, 200);
                   -->
                   <li class="menu__item js-menu-item" data-menu="1">
-                    <span class="menu__icon icon-winner-winnings"></span>
+                    <span class="menu__icon icon-trophy"></span>
                     <span class="menu__text">
                       Мои выигрыши
                     </span>
@@ -103,7 +103,7 @@
                     </span>
                   </li>
                   <li class="menu__item js-menu-item" data-menu="3">
-                    <span class="menu__icon icon-winner-subscriptions"></span>
+                    <span class="menu__icon icon-clock"></span>
                     <span class="menu__text">
                       Мои подписки
                     </span>
@@ -115,7 +115,7 @@
                     </span>
                   </li>
                   <li class="menu__item js-menu-item" data-menu="5">
-                    <span class="menu__icon icon-chess"></span>
+                    <span class="menu__icon icon-wallet-arrow"></span>
                     <span class="menu__text">
                       Вывод средств
                     </span>
@@ -302,7 +302,7 @@
                       <div class="tabs__item js-tabs-item active" data-tab="1">
                         <div class="subscription__status subscription__status_active">Подписка активна до 04.08.2022</div>
                         <div class="subscription__subtitle">Подписка на тренировки</div>
-                        <div class="subscription__rate">Курс оплаты: 1 W = 1 W</div>
+                        <!-- <div class="subscription__rate">Курс оплаты: 1 W = 1 W</div> -->
                         <div class="coin">
                           <button type="button" class="coin__item">
                             <div class="coin__days">7</div>
@@ -457,14 +457,12 @@
                       <div class="tabs__item js-tabs-item active" data-tab="1">
                         <div class="subscription__subtitle">Участие в турнире</div>
                         <div class="subscription__rate">
-                          Лимит на покупки в день: 0 из у.е.
+                          Лимит на покупки в день: 0 из 500 W.
                         </div>
-                        <div class="subscription__rate">
-                          Курс оплаты: 1 W = 1 у.е.
-                        </div>
+                        <!-- <div class="subscription__rate">Курс оплаты: 1 W = 1 у.е.</div> -->
 
                         <div class="coin">
-                          <button type="button" class="coin__item">
+                          <button type="button" class="coin__item active">
                             <div class="coin__days">10</div>
                             <div class="coin__text">жетонов</div>
                             <div class="coin__price">
@@ -626,7 +624,7 @@
                       <div class="tabs__item js-tabs-item active" data-tab="1">
                         <div class="payment">
                           <div class="payment__wallet">Мой кошелек: <span>215 W</span></div>
-                          <div class="subscription__rate">Курс оплаты: 1W = 1 KZT</div>
+                          <!-- <div class="subscription__rate">Курс оплаты: 1W = 1 KZT</div> -->
 
                           <label class="label">
                             Сумма вывода:
@@ -675,6 +673,10 @@
                               </div>
                             </button>
                           </div>
+
+                          <div class="payment__total">Итого: 0 W</div>
+
+                          <div class="payment__text">Уважаемый пользователь, комиссия платежной системы составит 3,2% от общей суммы.</div>
 
                           <button type="button" class="payment__btn">Вывести</button>
                         </div>
@@ -849,6 +851,7 @@
                 </div>
 
                 <div class="personal__content js-menu-content" data-menu="10" data-aos="fade-down">
+                  <h3 class="personal__title">Мои результаты</h3>
                   <ul class="info">
                     <li class="info__item">
                       <a href="" class="info__link">Правила игры</a>

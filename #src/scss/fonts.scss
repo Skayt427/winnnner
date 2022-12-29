@@ -31,9 +31,20 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-wallet-arrow:before {
+  content: "\e918";
+}
+
+.icon-trophy:before {
+  content: "\e919";
+}
+
+.icon-clock:before {
+  content: "\e91a";
+}
+
 .icon-arrow-left:before {
   content: "\e913";
-  color: #fff;
 }
 
 .icon-comparing-down:before {
