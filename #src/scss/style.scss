@@ -1194,6 +1194,18 @@
     font-size: 16px;
     line-height: 20px;
   }
+
+  .main__inner {
+    .box {
+      &:nth-child(1) {
+        order: 3;
+      }
+
+      &:nth-child(5) {
+        order: 4;
+      }
+    }
+  }
 }
 
 @media (max-width: 1000px) {

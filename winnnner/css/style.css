@@ -3148,6 +3148,18 @@ body {
     line-height: 20px;
   }
 
+  .main__inner .box:nth-child(1) {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+
+  .main__inner .box:nth-child(5) {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+  }
+
   .content {
     height: 100%;
   }
